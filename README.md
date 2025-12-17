@@ -2,12 +2,6 @@
 
 A minimal AI agent that uses Google Gemini and web search to answer questions.
 
-## Requirements Met
-
-✅ **Framework**: Google Gemini AI
-✅ **Tools**: Web search (DuckDuckGo)
-✅ **LLM**: Gemini 2.5 Flash
-
 ---
 
 ## Setup
