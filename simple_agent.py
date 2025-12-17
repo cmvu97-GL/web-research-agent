@@ -3,10 +3,6 @@ Simple AI Research Agent
 ========================
 An AI agent that uses tools (web search) and Google Gemini to answer questions.
 
-Assignment Requirements:
-✅ Uses a framework (Google Gemini AI)
-✅ Uses tools (web search)
-✅ Answers questions via LLM
 """
 
 import os
@@ -23,23 +19,11 @@ if not api_key:
     raise ValueError("Please add GOOGLE_API_KEY to .env file")
 
 client = genai.Client(api_key=api_key)
-MODEL_ID = "gemini-2.5-flash"  # Latest Gemini model
+MODEL_ID = "gemini-2.5-flash" 
 
 
 def search_and_answer(question: str) -> str:
-    """
-    AI agent that searches the web and answers questions.
-
-    How it works:
-    1. Tool: Search the web for information
-    2. LLM: Use Google Gemini to analyze and answer
-
-    Args:
-        question: The question to answer
-
-    Returns:
-        AI-generated answer
-    """
+    
     print(f"\n[SEARCH] Searching for: {question}")
 
     # TOOL: Search the web
@@ -76,12 +60,24 @@ Provide a clear, accurate answer based on these sources."""
 
 # Example usage
 if __name__ == "__main__":
+    import sys
+
     print("=" * 60)
     print("SIMPLE AI RESEARCH AGENT")
     print("=" * 60)
 
-    # Ask a question
-    question = "What is Python used for?"
+    # Get question from command line or use default
+    if len(sys.argv) > 1:
+        # Use question from command line
+        question = " ".join(sys.argv[1:])
+    else:
+        # Ask user for question
+        question = input("\nWhat's your question? ")
+
+    if not question.strip():
+        print("No question provided!")
+        sys.exit(1)
+
     answer = search_and_answer(question)
 
     print("ANSWER:")
