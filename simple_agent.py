@@ -64,11 +64,14 @@ SEARCH RESULTS:
 
 Provide a clear, accurate answer based on these sources."""
 
-    response = client.models.generate_content(
-        model=MODEL_ID,
-        contents=prompt
-    )
-    return response.text
+    try:
+        response = client.models.generate_content(
+            model=MODEL_ID,
+            contents=prompt
+        )
+        return response.text
+    except Exception as e:
+        return f"AI Error: {str(e)}\n\nSearch results were found, but AI couldn't process them."
 
 
 # Example usage
