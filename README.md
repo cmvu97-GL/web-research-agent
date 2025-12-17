@@ -49,18 +49,22 @@ Question → Web Search Tool → LLM (Gemini) → Answer
 ## Example Output
 
 ```
-$ python simple_agent.py
+$ python simple_agent.py "How does gravity work?"
 
-[SEARCH] Searching for: What is Python used for?
+[SEARCH] Searching for: How does gravity work?
+[SEARCH] Searching DuckDuckGo for: 'How does gravity work?'
+[SEARCH] Found 3 results
 [FOUND] 3 sources
 
 [AI] Generating answer...
 
 ANSWER:
-Python is used for data science, web development, automation,
-natural language processing, computer vision, and scientific computing.
+Gravity is described as a fundamental physical interaction that derives primarily from mass. According to this physical law, every object with mass attracts every other object in the universe in proportion to each mass and inversely proportional to the square of the distance between them [2].
+
+Different theories explain how gravity works:
+*   **Newton's Theory** describes gravity as a force [1].
+*   **Einstein's Theory** explains gravity as a distortion of space-time [1].
+*   **Modern Physics** offers additional views, exploring gravity as a particle, a wave, or even an emergent phenomenon arising from deeper, quantum-level information, rather than a fundamental force [1, 3]. Approaches like Loop Quantum Gravity (LQG) are also being explored in the context of quantum gravity [3].
 ```
 
 ---
-
-**That's it!** Simple agent demonstrating tool use + LLM integration.
