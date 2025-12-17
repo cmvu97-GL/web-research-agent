@@ -1,0 +1,7 @@
+# Core dependencies for web research agent
+requests>=2.31.0          # HTTP library for making web requests
+beautifulsoup4>=4.12.0    # HTML parsing and web scraping
+lxml>=4.9.0               # Fast XML/HTML parser (used by BeautifulSoup)
+anthropic>=0.18.0         # Claude AI API client
+google-api-python-client>=2.108.0  # Google Custom Search API
+python-dotenv>=1.0.0      # Environment variable management for API keys
